@@ -12,7 +12,7 @@ interface CardContentFormProps {
 }
 
 export const CardContentForm = (props: CardContentFormProps) => {
-  const { value, handleChange } = useInput(props.initialValues.content)
+  const { size, value, handleChange } = useInput(props.initialValues.content)
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault()
@@ -23,6 +23,7 @@ export const CardContentForm = (props: CardContentFormProps) => {
     <form className={styles.form} onSubmit={handleSubmit}>
       <textarea
         className={styles.textarea}
+        style={{ fontSize: size }}
         autoFocus
         value={value}
         onBlur={handleSubmit}
